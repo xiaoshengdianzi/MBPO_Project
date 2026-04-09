@@ -1,6 +1,6 @@
 # MBPO Minimal Reproduction (Pendulum-v1)
 
-## 项目概述
+## Overview
 
 This is a minimal, runnable MBPO-style implementation for learning and experimentation.
 It includes:
@@ -10,7 +10,7 @@ It includes:
 - Short model rollouts to generate synthetic transitions
 - Mixed real/model replay updates
 
-## 安装说明
+## Installation
 
 ```bash
 git clone https://github.com/xiaoshengdianzi/MBPO_Project
@@ -20,21 +20,21 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-## 使用方法
+## Usage
 
-### 训练命令
+### Training Command
 
 ```bash
 python train_mbpo.py --device cpu --steps 120000
 ```
 
-### 模块化版本
+### Modular Version
 
 ```bash
 python train.py --env_name Pendulum-v1 --num_episodes 20
 ```
 
-### 参数说明
+### Optional Arguments
 
 - `--rollout_horizon 1|3|5`
 - `--rollout_freq 250`
@@ -42,41 +42,41 @@ python train.py --env_name Pendulum-v1 --num_episodes 20
 - `--eval_interval 5000`
 - `--seed 42`
 
-## 项目结构
+## Project Structure
 
 ```
 06_MBPO/
 │
-├─ mbpo/                # 主要功能模块包
-│   ├─ buffer.py        # 经验回放池（ReplayBuffer）
-│   ├─ dynamics.py      # 环境动力学模型与 FakeEnv
-│   ├─ mbpo.py          # MBPO 主流程（训练循环、模型推演等）
-│   ├─ sac.py           # SAC 算法与神经网络结构
-│   └─ __init__.py      # 包初始化
+├─ mbpo/                # Main functionality package
+│   ├─ buffer.py        # Experience replay buffer (ReplayBuffer)
+│   ├─ dynamics.py      # Environment dynamics model and FakeEnv
+│   ├─ mbpo.py          # MBPO main workflow (training loop, model rollouts, etc.)
+│   ├─ sac.py           # SAC algorithm and neural network structures
+│   └─ __init__.py      # Package initialization
 │
-├─ train.py             # 主入口脚本，负责参数解析、训练与画图
-├─ requirements.txt     # 依赖包清单
-└─ README.md            # 项目说明与用法
+├─ train.py             # Main entry script, handles parameter parsing, training and plotting
+├─ requirements.txt     # Dependency list
+└─ README.md            # Project description and usage
 ```
 
-各模块功能简述：
+### Module Descriptions
 
-- mbpo/buffer.py：实现经验回放池 ReplayBuffer，用于存储和采样交互数据。
-- mbpo/dynamics.py：实现环境动力学模型（集成网络）和 FakeEnv，用于模型推演生成虚拟样本。
-- mbpo/sac.py：实现 SAC 算法的策略网络、Q 网络及其优化器。
-- mbpo/mbpo.py：实现 MBPO 主流程，包括模型训练、数据混合、主训练循环等。
-- train.py：主入口，负责参数解析、环境初始化、训练流程和结果可视化。
+- mbpo/buffer.py: Implements ReplayBuffer for storing and sampling interaction data.
+- mbpo/dynamics.py: Implements environment dynamics model (ensemble network) and FakeEnv for model rollouts to generate virtual samples.
+- mbpo/sac.py: Implements SAC algorithm with policy network, Q networks and their optimizers.
+- mbpo/mbpo.py: Implements MBPO main workflow, including model training, data mixing, main training loop, etc.
+- train.py: Main entry point, handles parameter parsing, environment initialization, training process and result visualization.
 
-## 结果展示
+## Results
 
 ![MBPO Training Return](mbpo_return.png)
 
-## 预期行为
+## Expected Behavior
 
 For `Pendulum-v1`, average return should improve over training steps.
 The exact final return depends on seed and machine speed.
 
-## 注意事项
+## Notes
 
 - This is designed for clarity over full benchmark parity.
 - To reproduce MuJoCo benchmark numbers, extend this code with:
