@@ -1,5 +1,7 @@
 # MBPO Minimal Reproduction (Pendulum-v1)
 
+![MBPO Network Architecture](image.png)
+
 ## Overview
 
 This is a minimal, runnable MBPO-style implementation for learning and experimentation.
