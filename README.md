@@ -8,6 +8,10 @@ It includes:
 - Short model rollouts to generate synthetic transitions
 - Mixed real/model replay updates
 
+## 结果展示
+
+![MBPO Training Return](mbpo_return.png)
+
 ## 1. Setup
 
 ## 项目文件结构与功能说明
