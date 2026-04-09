@@ -1,5 +1,7 @@
 # MBPO Minimal Reproduction (Pendulum-v1)
 
+## 项目概述
+
 This is a minimal, runnable MBPO-style implementation for learning and experimentation.
 It includes:
 
@@ -8,9 +10,37 @@ It includes:
 - Short model rollouts to generate synthetic transitions
 - Mixed real/model replay updates
 
-## 1. Setup
+## 安装说明
 
-## 项目文件结构与功能说明
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+## 使用方法
+
+### 训练命令
+
+```bash
+python train_mbpo.py --device cpu --steps 120000
+```
+
+### 模块化版本
+
+```bash
+python train.py --env_name Pendulum-v1 --num_episodes 20
+```
+
+### 参数说明
+
+- `--rollout_horizon 1|3|5`
+- `--rollout_freq 250`
+- `--updates_per_step 1`
+- `--eval_interval 5000`
+- `--seed 42`
+
+## 项目结构
 
 ```
 06_MBPO/
@@ -35,43 +65,16 @@ It includes:
 - mbpo/mbpo.py：实现 MBPO 主流程，包括模型训练、数据混合、主训练循环等。
 - train.py：主入口，负责参数解析、环境初始化、训练流程和结果可视化。
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-## 2. Train
-
-```bash
-python train_mbpo.py --device cpu --steps 120000
-```
-
-
-Modular version:
-
-```bash
-python train.py --env_name Pendulum-v1 --num_episodes 20
-```
-
-Optional arguments:
-
-- `--rollout_horizon 1|3|5`
-- `--rollout_freq 250`
-- `--updates_per_step 1`
-- `--eval_interval 5000`
-- `--seed 42`
-
 ## 结果展示
 
 ![MBPO Training Return](mbpo_return.png)
 
-## 3. Expected behavior
+## 预期行为
 
 For `Pendulum-v1`, average return should improve over training steps.
 The exact final return depends on seed and machine speed.
 
-## 4. Notes
+## 注意事项
 
 - This is designed for clarity over full benchmark parity.
 - To reproduce MuJoCo benchmark numbers, extend this code with:
