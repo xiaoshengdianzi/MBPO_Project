@@ -13,6 +13,8 @@ It includes:
 ## 安装说明
 
 ```bash
+git clone https://github.com/xiaoshengdianzi/MBPO_Project
+cd MBPO_Project
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
