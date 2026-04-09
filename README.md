@@ -8,10 +8,6 @@ It includes:
 - Short model rollouts to generate synthetic transitions
 - Mixed real/model replay updates
 
-## 结果展示
-
-![MBPO Training Return](mbpo_return.png)
-
 ## 1. Setup
 
 ## 项目文件结构与功能说明
@@ -65,6 +61,10 @@ Optional arguments:
 - `--updates_per_step 1`
 - `--eval_interval 5000`
 - `--seed 42`
+
+## 结果展示
+
+![MBPO Training Return](mbpo_return.png)
 
 ## 3. Expected behavior
 
