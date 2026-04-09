@@ -95,3 +95,8 @@ The exact final return depends on seed and machine speed.
   - elite model filtering,
   - adaptive rollout horizon schedule,
   - benchmark environments and tuned hyperparameters.
+
+## Blog
+
+Check out my blog post for more details:  
+[MBPO复现demo](https://blog.csdn.net/m0_66676819/article/details/159989306?sharetype=blogdetail&sharerId=159989306&sharerefer=PC&sharesource=m0_66676819&spm=1011.2480.3001.8118)
