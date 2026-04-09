@@ -12,13 +12,22 @@ It includes:
 
 ## Installation
 
-```bash
-git clone https://github.com/xiaoshengdianzi/MBPO_Project
-cd MBPO_Project
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/xiaoshengdianzi/MBPO_Project
+   cd MBPO_Project
+   ```
+
+2. Create and activate virtual environment:
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
